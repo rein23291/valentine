@@ -1,0 +1,44 @@
+<!DOCTYPE.html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20%;
+            transition: 0.5s;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background: #ff4d79;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="message">Hey beautiful ❤️</h2>
+    <button onclick="nextStep('Can I ask you something?')">Hi</button>
+
+    <script>
+        function nextStep(text) {
+            document.getElementById('message').innerText = text;
+            document.querySelector('button').innerText = "Yes";
+            document.querySelector('button').setAttribute("onclick", "finalStep()");
+        }
+
+        function finalStep() {
+            document.getElementById('message').innerText = "Will you be my Valentine? 🥰";
+            document.querySelector('button').innerText = "Yes ❤️";
+            document.querySelector('button').setAttribute("onclick", "document.body.style.background='#ffcccc'; document.getElementById('message').innerText='Yay! 🥰'");
+        }
+    </script>
+</body>
+</html>
